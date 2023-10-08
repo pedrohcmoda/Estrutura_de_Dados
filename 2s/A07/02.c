@@ -6,13 +6,14 @@ Crie um vetor com dez elementos (3, 5, 8, 9, 8, 7, 7, 6, 2, 0) e ordene esse vet
 */
 
 int main(){
-    int vetor[] = {3,5,8,9,8,7,7,6,2,0};
+    int vetor[] = {12, 10, 16, 11, 9, 7};
     int i, j, aux, tamanho = sizeof(vetor)/sizeof(int);
     printf("Pre ordenacao: \n");
     for (i = 0; i < tamanho; i++)
     {
         printf("%d\t", vetor[i]);
     }
+    printf("\n");
     for(i = 0;i<tamanho;i++){
         for (j = i+1; j < tamanho; j++)
         {
@@ -20,6 +21,11 @@ int main(){
                 aux = vetor[i];
                 vetor[i]=vetor[j];
                 vetor[j]=aux;
+                    for (int l = 0; l < tamanho; l++)
+                    {
+                        printf("%d\t", vetor[l]);
+                    }
+                    printf("\n");
             };
         }
         

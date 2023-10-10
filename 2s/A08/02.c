@@ -4,6 +4,20 @@
 Crie um vetor com 50 elementos e ordene esse vetor com o metodo de ordenacao por selecao.
 */
 
+void selecaoSort(int vetor[], int tamanho){
+    int i, j, aux;
+    for(i = 0;i<tamanho;i++){
+        for (j = i+1; j < tamanho; j++)
+        {
+            if(vetor[j]<vetor[i]){
+                aux = vetor[i];
+                vetor[i]=vetor[j];
+                vetor[j]=aux;
+            };
+        }   
+    }
+}
+
 int main(){
     int *vetor = malloc(50*sizeof(int));
     for (int valor = 0; valor < 50; valor++) {

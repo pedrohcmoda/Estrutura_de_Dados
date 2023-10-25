@@ -16,13 +16,13 @@ void shellsort(int array[], int valor) {
 
 int main() {
     int array[] = {3, 4, 9, 2, 5, 1, 8};
-    printf("Array antes da implementação: \n");
+    printf("Array antes da ordenação: \n");
     for (int i = 0; i < 7; i++) {
         printf("%d ", array[i]);
     }
     printf("\n");
     shellsort(array, 7);
-    printf("Array depois da implementação: \n");
+    printf("Array depois da ordenação: \n");
     for (int i = 0; i < 7; i++) {
         printf("%d ", array[i]);
     }

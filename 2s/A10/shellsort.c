@@ -1,30 +1,40 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-void shellsort(int array[], int valor) {
-    for (int gap = valor / 2; gap > 0; gap /= 2) {
-        for (int i = gap; i < valor; i++) {
-            int temp = array[i];
-            int j;
-            for (j = i; j >= gap && array[j - gap] > temp; j -= gap) {
-                array[j] = array[j - gap];
+
+void shell_sort(int *A, int tamanho){
+  for(int gap = gap=tamanho/2;gap>0;gap /=2){
+    
+    for(int i=gap;i<tamanho;i++){
+        int temp = A[i];
+        int j;
+
+            for(j = i; j>=gap && A[j-gap]>temp;j-=gap){
+                A[j] = A[j-gap];
+                printf("\nVetor apos A[j]=A[j-gap] (troca feita dentro do loop mais interno):\n");
+                for(int i = 0;i<tamanho ; i++)printf("%d \t", A[i]);
+                printf("\n");
             }
-            array[j] = temp;
-        }
+        
+        A[j] = temp;
+        printf("\nVetor apos A[j]=temp:\n");
+        for(int i = 0;i<tamanho ; i++)printf("%d \t", A[i]);
+        printf("\n");
     }
-}
+    printf("\n\n\nSAIU DO FOR DO MEIO\n\n\n");
+  }
+};
 
-int main() {
-    int array[] = {3, 4, 9, 2, 5, 1, 8};
-    printf("Array antes da ordenação: \n");
-    for (int i = 0; i < 7; i++) {
-        printf("%d ", array[i]);
-    }
-    printf("\n");
-    shellsort(array, 7);
-    printf("Array depois da ordenação: \n");
-    for (int i = 0; i < 7; i++) {
-        printf("%d ", array[i]);
-    }
+
+
+int main()
+{
+    int vetor[] = {6, 5, 4, 3, 2, 1};
+    int tamanho = 6;
+    printf("Vetor antes da ordenação:\n");
+    for(int i = 0;i<tamanho ; i++)printf("%d \t", vetor[i]);
+    printf("\n\n");
+    shell_sort(vetor, tamanho);
+    printf("\nVetor após a ordenação:\n");
+    for(int i = 0;i<tamanho ; i++)printf("%d \t", vetor[i]);
     return 0;
 }

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 void selecaoCrescente(int *vetor, int tamanho){
@@ -156,7 +158,39 @@ void merge_sorted_arrays(int a[], int l, int m, int r)
   }  
 }
 
+void swap(int *x, int *y){	
+	int aux = *y;
+	*y=*x;
+	*x=aux;
+}
+void quicksort(int vetor[], int tamanho){
+	srand(time(NULL));
+	quicksort_recursivo(vetor[], 0, tamanho -1);
+}
+void quicksort_recursivo(int vetor[], int min, int max){
+	if(min<max){
+		int pivo= partition(vetor, min, max);
+		quicksort_recursivo(vetor, min, pivo-1);
+		quicksort_recursivo(vetor, pivo+1, max);
+	}
+}
 
+int partition(int vetor[], int min, int max){
+	int pivo = (min + rand()%(max-min));
+	if(pivo!=max){
+		swap(&vetor[pivo], &vetor[max]);
+	}
+	pivo = vetor[max];
+	int i = min;
+	for(int j = 0;j<max;j++){
+		if(vetor[j]<=pivo){
+			swap (&vetor[i], &vetor[max];
+			i++;
+		}
+	}
+	swap(&vetor[i], &vetor[max]);
+	return i;
+}
 
 
 

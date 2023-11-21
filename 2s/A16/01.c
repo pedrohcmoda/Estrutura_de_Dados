@@ -21,7 +21,7 @@ int main() {
         printf("Digite a moeda: ");
         scanf("%d", &m[j]);
     }
-    printf("Digite o valor que do troco: ");
+    printf("Digite o valor do troco: ");
     scanf("%d", &i);
 
     printf("Numero de moedas: %d", num_moedas(i, M, m));
